@@ -17,7 +17,7 @@ class StoreDataItems extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return Consumer<StoreViewModel>(
       builder: (context, vm, _) {
         if (vm.loading) {
