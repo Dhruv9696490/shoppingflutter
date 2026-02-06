@@ -37,12 +37,12 @@ class CartScreen extends StatelessWidget {
                   Icon(
                     Icons.shopping_cart_outlined,
                     size: 80,
-                    color: Colors.grey[400],
+                    color: Colors.grey[600],
                   ),
                   const SizedBox(height: 16),
-                  const Text(
+                   Text(
                     "Your cart is empty",
-                    style: TextStyle(fontSize: 18, color: Colors.grey),
+                    style: TextStyle(fontSize: 22, color: Colors.grey[600]),
                   ),
                 ],
               ),
