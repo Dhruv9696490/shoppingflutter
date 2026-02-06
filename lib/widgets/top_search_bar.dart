@@ -6,17 +6,18 @@ class TopSearchBar extends StatelessWidget {
   const TopSearchBar({super.key, required this.controller, required this.onSendClick});
   @override
   Widget build(BuildContext context){
-    final imd = OutlineInputBorder(
-      borderRadius: BorderRadius.horizontal(left: Radius.circular(200)),
+    OutlineInputBorder myBorder() => OutlineInputBorder(
+      borderRadius: BorderRadius.horizontal(left: Radius.circular(55)),
       borderSide: BorderSide(
-          width: 1,
+          width: 1.3,
           color: Colors.black
       ),
     );
-    return Row(crossAxisAlignment: CrossAxisAlignment.center,
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text("Store\nCollection",style: TextStyle(
-          fontSize: 34,
+          fontSize: 32,
           fontWeight: FontWeight.bold,
         ),),
         SizedBox(width: 8,),
@@ -24,6 +25,9 @@ class TopSearchBar extends StatelessWidget {
           child: TextField(
             controller: controller,
             onSubmitted: onSendClick,
+            style: TextStyle(
+              fontWeight: FontWeight.w600
+            ),
             decoration: InputDecoration(
                 focusColor: Colors.black,
                 hoverColor: Colors.black,
@@ -31,15 +35,15 @@ class TopSearchBar extends StatelessWidget {
                 hintText: "Search",
                 hintStyle: TextStyle(
                     fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w900,
                     color: Colors.grey
                 ),
-                border: imd,
-                enabledBorder: imd,
-                focusedBorder: imd
+                border: myBorder(),
+                enabledBorder: myBorder(),
+                focusedBorder: myBorder()
             ),
           ),
-        )
+        ),
       ],
     );
   }

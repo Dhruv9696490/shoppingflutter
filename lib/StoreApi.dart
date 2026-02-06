@@ -1,14 +1,14 @@
 import 'dart:convert';
+import 'package:shoppingflutter/private_section/private.dart';
 import 'package:shoppingflutter/shopping_model.dart';
 import 'package:http/http.dart' as http;
 
 class StoreApi{
-   static const String api = "https://fakestoreapi.com/products";
    Future<List<StoreData>> getAllItems() async{
-     final itemInstance = await http.get(Uri.parse(api));
+     final itemInstance = await http.get(Uri.parse(PrivateData.api));
      if(itemInstance.statusCode==200){
        try{
-         final List response = jsonDecode(itemInstance.body);
+         final List<dynamic> response = jsonDecode(itemInstance.body);
          return response.map((it){
            return StoreData.fromJson(it);
          }).toList();

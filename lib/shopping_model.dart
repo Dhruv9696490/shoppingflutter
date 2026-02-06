@@ -1,4 +1,12 @@
 class StoreData {
+  final int? id;
+  final String? title;
+  final double? price;
+  final String? description;
+  final String? category;
+  final String? image;
+  final Rating? rating;
+  bool isFavorite;
   StoreData({
     required this.id,
     required this.title,
@@ -7,15 +15,10 @@ class StoreData {
     required this.category,
     required this.image,
     required this.rating,
+    this.isFavorite = false
   });
 
-  final int? id;
-  final String? title;
-  final double? price;
-  final String? description;
-  final String? category;
-  final String? image;
-  final Rating? rating;
+
 
   factory StoreData.fromJson(Map<String, dynamic> json){
     return StoreData(
@@ -28,7 +31,6 @@ class StoreData {
       rating: json["rating"] == null ? null : Rating.fromJson(json["rating"]),
     );
   }
-
 }
 
 class Rating {

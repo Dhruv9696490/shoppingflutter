@@ -22,4 +22,8 @@ class StoreViewModel extends ChangeNotifier{
     _loading =false;
     notifyListeners();
   }
+  void toggleFavorite(StoreData product){
+    product.isFavorite = !product.isFavorite;
+    notifyListeners();
+  }
 }
