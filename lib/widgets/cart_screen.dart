@@ -40,7 +40,7 @@ class CartScreen extends StatelessWidget {
                     color: Colors.grey[600],
                   ),
                   const SizedBox(height: 16),
-                   Text(
+                  Text(
                     "Your cart is empty",
                     style: TextStyle(fontSize: 22, color: Colors.grey[600]),
                   ),
@@ -69,6 +69,11 @@ class CartScreen extends StatelessWidget {
                             width: 80,
                             height: 80,
                             fit: BoxFit.contain,
+                            errorBuilder: (context, error, stackTrace) {
+                              return Center(
+                                child: Icon(Icons.image,size: 80,color: Colors.grey,)
+                              );
+                            },
                           ),
                         ),
                         const SizedBox(width: 12),

@@ -17,10 +17,32 @@ class StoreData {
     required this.rating,
     this.isFavorite = false
   });
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'id': id,
+      'title': title,
+      'price': price,
+      'description': description,
+      'category': category,
+      'image': image,
+      'rate': rating?.rate ?? 0.0,
+      'count': rating?.count ?? 0,
+      'isFavorite': isFavorite ? 1 : 0,
+    };
+  }
+factory StoreData.fromMap(Map<String, dynamic> map){//
+    return StoreData(
+      id: map["id"],
+      title: map["title"],
+      price: map["price"],
+      description: map["description"],
+      category: map["category"],
+      image: map["image"],
+      rating: Rating(rate: map['rate'], count: map['count']),
+    );
+  }
 
-
-
-  factory StoreData.fromJson(Map<String, dynamic> json){
+  factory StoreData.fromJson(Map<String, dynamic> json){//
     return StoreData(
       id: json["id"],
       title: json["title"],

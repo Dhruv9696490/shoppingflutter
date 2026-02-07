@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingflutter/shopping_model.dart';
+import 'package:shoppingflutter/model/shopping_model.dart';
 
 class DescriptionScreen extends StatelessWidget {
   final StoreData data;
@@ -32,6 +32,11 @@ class DescriptionScreen extends StatelessWidget {
                 width: double.infinity,
                 height: 300,
                 fit: BoxFit.contain,
+                errorBuilder: (context, error, stackTrace) {
+                  return Center(
+                    child: Icon(Icons.image, size: 120, color: Colors.grey),
+                  );
+                },
               ),
             ),
 

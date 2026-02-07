@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shoppingflutter/description_screen.dart';
+import 'package:shoppingflutter/pages/description_screen.dart';
 import '../store_view_model.dart';
 
 class StoreDataItems extends StatelessWidget {
@@ -17,7 +17,7 @@ class StoreDataItems extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Consumer<StoreViewModel>(
       builder: (context, vm, _) {
         if (vm.loading) {
@@ -118,6 +118,11 @@ class StoreDataItems extends StatelessWidget {
                                 fit: BoxFit.contain,
                                 height: 200,
                                 width: 300,
+                                errorBuilder: (context, error, stackTrace) {
+                              return Center(
+                                child: Icon(Icons.image,size: 120,color: Colors.grey,)
+                              );
+                            },
                               ),
                             ],
                           ),
